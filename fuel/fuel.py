@@ -12,7 +12,8 @@ def get_input():
             fraction=input("Fraction: ")
             a,b=fraction.split("/")
             if int(a)>int(b):
-                continue
+
+              continue
             else:
                 return float((int(a)*100/int(b)))
         except ValueError:

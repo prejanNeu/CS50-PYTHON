@@ -1,10 +1,12 @@
+import sys
 def main():
     plate = input("Plate: ")
     if is_valid(plate):
         print("Valid")
+        sys.exit(0)
     else:
         print("Invalid")
-
+        sys.exit(1)
 
 def is_valid(s):
     i=2
@@ -16,13 +18,11 @@ def is_valid(s):
                 break
         part1=s[:i]
         part2=s[i:]
-        if part1.isalpha():
-            if part2[0]!= '0' and part2.isdigit():
-                return True
-            else:
-                return False
+        if part2[0]!= '0' and part2.isdigit() and part1.isalpha():
+            return True
         else:
             return False
+    return False
 
-
-main()
+if __name__ == "__main__":
+    main()
